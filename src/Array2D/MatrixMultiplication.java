@@ -35,7 +35,7 @@ public class MatrixMultiplication {
 
         for(int row = 0; row < product.length; row++){
             for(int col = 0; col < product[0].length; col++){
-                for(int fill = 0; fill < r1; fill++){
+                for(int fill = 0; fill < r2; fill++){
                     product[row][col] += a1[row][fill] * a2[fill][col];
                 }
             }
