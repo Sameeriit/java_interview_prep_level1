@@ -1,5 +1,11 @@
 package Array2D;
 import java.util.*;
+/**
+ * problem ExitPoint of the array
+ * solution
+ * Author : Sameer Ahmad
+ * date : 31/05/2022
+ */
 
 public class ExitPoint {
     public static void main(String[] args) {

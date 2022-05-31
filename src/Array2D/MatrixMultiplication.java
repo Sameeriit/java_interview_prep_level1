@@ -1,5 +1,11 @@
 package Array2D;
 import java.util.*;
+/**
+ * problem rotate matrix multiplication
+ * solution
+ * Author : Sameer Ahmad
+ * date : 31/05/2022
+ */
 
 public class MatrixMultiplication {
     public static void main(String[] args) {
