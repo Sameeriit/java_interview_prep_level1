@@ -1,6 +1,13 @@
 package Array2D;
 import java.util.*;
 
+/**
+ * problem state of wakanda 3 or lower triangular matrix
+ * solution of state of wakanda 3
+ * Author : Sameer Ahmad
+ * date : 1/05/2022
+ */
+
 public class StateOfWakanda3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
