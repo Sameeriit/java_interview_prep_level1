@@ -9,6 +9,7 @@ public class Finding_Duplicate {
         Scanner sc = new Scanner(System.in);
         String word = sc.nextLine();
         String ans = searchString(word);
+
     }
 
 
@@ -19,6 +20,7 @@ public class Finding_Duplicate {
         }
         for (int index = 0; index < str.length(); index++) {
             if (str.charAt(index) == str.charAt(index + 1)) {
+
 
             }
            System.out.println(str.charAt(index));
