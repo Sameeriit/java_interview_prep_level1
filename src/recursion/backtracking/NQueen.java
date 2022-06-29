@@ -1,7 +1,8 @@
-package GenericTree;
+package recursion.backtracking;
 
-public class Basictree {
+public class NQueen {
     public static void main(String[] args) {
 
     }
+
 }
