@@ -3,6 +3,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
+/**
+ * problem on genric tree print node level order
+ * solution
+ * Author: Sameer Ahmad
+ * date: 4/07/2022
+ */
+
 public class LevelOrder {
 
         private static class Node {
