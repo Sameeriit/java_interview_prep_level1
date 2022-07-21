@@ -1,4 +1,4 @@
-package recursion;
+package recursion.basics;
 import java.util.*;
 
 /**
