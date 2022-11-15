@@ -7,7 +7,7 @@ import java.util.Scanner;
  *  author : sameeriit
  */
 
- public class conditional_loop {
+ public class AreaOfCircle {
     public static void main(String[] args) {
         double pi =  3.14;
         System.out.print("Put The Radius Here : ");
