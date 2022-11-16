@@ -50,56 +50,93 @@ public class IntroductionToBinaryTree {
         display(node.right);
     }
 
-    // construction of binary tree
+    /*------ construction of binary tree way1----------*/
+
     public  static void main(String[] args) {
         Integer[] arr = {50,25,12,null,null,37,30,null,null,null,75,62,null,70,null,null,87,null,null};
 
-        Node root  = new Node(arr[0],null,null);  // make root node
-        pair root_pair = new pair(root,1);            // root pair
+        Node root = new Node(arr[0],null,null);
+        pair root_pair = new pair(root,1);
 
         Stack<pair> st = new Stack<>();
         st.push(root_pair);
 
         int idx = 0;
         while(st.size() > 0){
-            pair top = st.peek();    // make top as pair so that we can see state and node properties
+             pair top = st.peek();
+             if(top.state == 1){
+                 idx++;
+                 if(arr[idx] != null){
+                     top.node.left = new Node(arr[idx],null,null);
+                     top.state++;
+                     pair lp = new pair(top.node.left,1);
+                     st.push(lp);
+                 }else{
+                     top.node.left = null;
+                     top.state++;
+                 }
 
-            if(top.state == 1){   // go to left child and work
-                idx++;
 
-                if(arr[idx] != null){
-                    Node ln = new Node(arr[idx],null,null);
-                    top.node.left = ln;
-                    pair lnp = new pair(ln,1);
-                    st.push(lnp);
-                }else{
-                    top.node.left = null;
-                }
-                top.state++;
+             }else if(top.state == 2){
+                 idx++;
+                 if(arr[idx] != null){
+                     top.node.right = new Node(arr[idx],null,null);
+                     top.state++;
+                     pair rp = new pair(top.node.right,1);
+                     st.push(rp);
 
-            }else if(top.state == 2){   // go to right child and work
-                idx++;
+                 }else {
+                     top.node.right = null;
+                     top.state++;
+                 }
+             }else{
+                 st.pop();
+             }
 
-                if(arr[idx] != null){
-                    Node rn = new Node(arr[idx],null,null);
-                    top.node.right = rn;
-                    pair rnp = new pair(rn,1);
-                    st.push(rnp);
-                }else{
-                    top.node.right = null;
-                }
-                top.state++;
+         /*------- construction of binary tree other way2-----------------*/
 
-            }else{
-                st.pop();
-            }
-
+//        Node root  = new Node(arr[0],null,null);  // make root node
+//        pair root_pair = new pair(root,1);            // root pair
+//
+//        Stack<pair> st = new Stack<>();
+//        st.push(root_pair);
+//
+//        int idx = 0;
+//        while(st.size() > 0){
+//            pair top = st.peek();    // make top as pair so that we can see state and node properties
+//
+//            if(top.state == 1){   // go to left child and work
+//                idx++;
+//
+//                if(arr[idx] != null){
+//                    Node ln = new Node(arr[idx],null,null);
+//                    top.node.left = ln;
+//                    pair lnp = new pair(ln,1);
+//                    st.push(lnp);
+//                }else{
+//                    top.node.left = null;
+//                }
+//                top.state++;
+//
+//            }else if(top.state == 2){   // go to right child and work
+//                idx++;
+//
+//                if(arr[idx] != null){
+//                    Node rn = new Node(arr[idx],null,null);
+//                    top.node.right = rn;
+//                    pair rnp = new pair(rn,1);
+//                    st.push(rnp);
+//                }else{
+//                    top.node.right = null;
+//                }
+//                top.state++;
+//
+//            }else{
+//                st.pop();
+//            }
         }
 
         display(root);
-
-
-
 
     }
 }
