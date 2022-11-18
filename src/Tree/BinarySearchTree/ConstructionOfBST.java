@@ -1,5 +1,12 @@
 package Tree.BinarySearchTree;
 
+/**
+ * Introduction of binary search tree
+ * solution
+ * Author : Sameer Ahmad
+ * Date : 18/11/2022
+ */
+
 public class ConstructionOfBST {
 
     public static  class Node{
@@ -44,10 +51,14 @@ public class ConstructionOfBST {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args)throws Exception {
         int[] arr = {12,25,37,50,62,75,87};
         Node root = construct(arr,0,arr.length-1);
         display(root);
+
+
+
+
     }
 
 }
