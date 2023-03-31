@@ -1,9 +1,15 @@
 package StackAndQueue;
 import java.util.*;
 
+/**
+ * problem balanced bracket of an expression
+ * solution :done;
+ * Author: sameer ahmad
+ * date : 15/02/2023
+ */
 
 public class BalanceBracket {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
 
@@ -11,49 +17,52 @@ public class BalanceBracket {
 
         for(int i = 0; i < str.length(); i++){
             char ch = str.charAt(i);
-            if(ch == '(' || ch == '{'|| ch == '['){
+            if(ch == '(' || ch == '{' || ch =='['){
                 st.push(ch);
-            }else if(ch == ')'){
-                boolean val = handler(st,'(');
+            }else if (ch == ')'){
+                Boolean val = handler(st,'(');
                 if(val == false){
                     System.out.println(val);
                     return;
                 }
 
             }else if(ch == '}'){
-                boolean val = handler(st,'{');
+                Boolean val = handler(st,'{');
                 if(val == false){
                     System.out.println(val);
                     return;
                 }
 
             }else if(ch == ']'){
-                boolean val = handler(st,'[');
+                Boolean val = handler(st,'[');
                 if(val == false){
                     System.out.println(val);
                     return;
                 }
 
-            }else{
+            }else { // ignore the other character
 
             }
         }
-        if(st.size()== 0){
+        // check if opening bracket is greater
+        if(st.size() == 0){
             System.out.println(true);
-
-        }else{
+        }else {
             System.out.println(false);
         }
+
     }
 
-    public static boolean handler(Stack<Character> st, char crossponding_ch){
+    public static Boolean handler(Stack<Character> st, char correspondence_ch){
+        // check if closing bracket is greater
         if(st.size() == 0){
-            return false;
-        }else if(st.peek() != crossponding_ch){
-            return false;
-        }else{
+            return false ;
+        }else if(st.peek() != correspondence_ch){
+            return false ;
+        }else {
             st.pop();
             return true;
         }
     }
+
 }

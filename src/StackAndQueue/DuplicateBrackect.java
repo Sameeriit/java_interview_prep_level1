@@ -10,29 +10,27 @@ import java.io.*;
 
 public class DuplicateBrackect {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
 
         Stack<Character> st = new Stack<>();
 
-        for(int i = 0; i < str.length(); i++){
+        for (int i = 0; i < st.size(); i++) {
             char ch = str.charAt(i);
-            if(ch == ')'){
+            if (ch == ')') {
                 if (st.peek() == '(') {
                     System.out.println(true);
-                    return;
-                }else{
-                    while(st.peek() != '('){
+                } else {
+                    while (st.peek() != '(') {
                         st.pop();
                     }
-                }
-                st.pop();
+                    st.pop();
 
-            }else{
+                }
+            } else {
                 st.push(ch);
             }
-
         }
         System.out.println(false);
     }
